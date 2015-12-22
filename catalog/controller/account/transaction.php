@@ -61,6 +61,7 @@ class ControllerAccountTransaction extends Controller {
 
 		$results = $this->model_account_transaction->getTransactions($filter_data);
 
+        //资金余额列表页面，仅商品订单才显示链接
         foreach ($results as $result) {
 			$data['transactions'][] = array(
 				'amount'      => $this->currency->format($result['amount'], $this->config->get('config_currency')),

@@ -31,6 +31,7 @@
             <?php foreach ($transactions as $transaction) { ?>
             <tr>
               <td class="text-left"><?php echo $transaction['date_added']; ?></td>
+              <!-- 资金余额列表页面，仅商品订单才显示链接 -->
               <?php if ($transaction['order_id']) { ?>
                 <td class="text-left"><a href="<?php echo $transaction['href']; ?>"><?php echo $transaction['description']; ?></a></td>
               <?php } else { ?>
