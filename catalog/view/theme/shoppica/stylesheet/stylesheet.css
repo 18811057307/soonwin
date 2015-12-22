@@ -337,7 +337,7 @@ div.required .control-label:before {
     background: rgb(250, 251, 252) url(../images/main.jpg) 50% 0 no-repeat;
 }
 #content {
-	min-height: 600px;
+	min-height: 460px;
 }
 
 .checked {
