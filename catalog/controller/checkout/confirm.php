@@ -283,6 +283,12 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['tracking'] = '';
 			}
 
+            if (isset($this->session->data['comment'])) {
+                $order_data['comment'] = $this->session->data['comment'];
+            } else {
+                $order_data['comment'] = '';
+            }
+
 			$order_data['language_id'] = $this->config->get('config_language_id');
 			$order_data['currency_id'] = $this->currency->getId();
 			$order_data['currency_code'] = $this->currency->getCode();
