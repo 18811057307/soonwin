@@ -146,7 +146,7 @@ class ControllerCommonHeader extends Controller {
 			$data['class'] = 'common-home';
 		}
 
-        //welcom 欢迎语
+        //welcom 欢迎语，显示可用额度，授信额度加上账面余额
         if($this->customer->isLogged()) {
             $this->load->model('account/customer');
             $customer_info = $this->model_account_customer->getCustomer($this->customer->getId());

@@ -46,7 +46,7 @@
     <div id="top-links" class="nav pull-left">
         <ul class="list-inline">
         <?php if ($logged) { ?>
-        <li><a href="<?php echo $transaction; ?>"><span class="hidden-xs hidden-sm hidden-md"><?php echo $firstname; ?>,您当前可用额度<?php echo $availablecredit; ?>（其中包含授信额度<?php echo $credit; ?>）</span></a></li>
+        <li><a href="<?php echo $transaction; ?>"><span class="hidden-xs hidden-sm hidden-md"><?php echo $firstname; ?>,当前可用额度<?php echo $availablecredit; ?>（其中包含授信额度<?php echo $credit; ?>）</span></a></li>
         <li><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span></a></li>
         <li><a href="<?php echo $transaction; ?>" title="<?php echo $text_transaction; ?>"><i class="fa fa-jpy"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_transaction; ?></span></a></li>
         <li><a href="<?php echo $order; ?>" title="<?php echo $text_order; ?>"><i class="fa fa-bars"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_order; ?></span></a></li>

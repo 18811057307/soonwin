@@ -9,7 +9,9 @@ class Customer {
 	private $newsletter;
 	private $customer_group_id;
 	private $address_id;
+    //授信额度
     private $credit;
+    //超额度的订单状态
     private $overCreditStatusId;
 
 	public function __construct($registry) {
