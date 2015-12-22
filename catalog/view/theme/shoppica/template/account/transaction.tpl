@@ -28,10 +28,14 @@
           </thead>
           <tbody>
             <?php if ($transactions) { ?>
-            <?php foreach ($transactions  as $transaction) { ?>
+            <?php foreach ($transactions as $transaction) { ?>
             <tr>
               <td class="text-left"><?php echo $transaction['date_added']; ?></td>
-              <td class="text-left"><a href="<?php echo $transaction['href']; ?>"><?php echo $transaction['description']; ?></a></td>
+              <?php if ($transaction['order_id']) { ?>
+                <td class="text-left"><a href="<?php echo $transaction['href']; ?>"><?php echo $transaction['description']; ?></a></td>
+              <?php } else { ?>
+                <td class="text-left"><?php echo $transaction['description']; ?></td>
+              <?php } ?>
               <td class="text-right"><?php echo $transaction['amount']; ?></td>
             </tr>
             <?php } ?>

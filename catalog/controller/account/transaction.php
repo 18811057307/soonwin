@@ -61,12 +61,13 @@ class ControllerAccountTransaction extends Controller {
 
 		$results = $this->model_account_transaction->getTransactions($filter_data);
 
-		foreach ($results as $result) {
+        foreach ($results as $result) {
 			$data['transactions'][] = array(
 				'amount'      => $this->currency->format($result['amount'], $this->config->get('config_currency')),
 				'description' => $result['description'],
                 'href'        => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], 'SSL'),
-				'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added']))
+				'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+                'order_id'  =>  $result['order_id']
 			);
 		}
 
