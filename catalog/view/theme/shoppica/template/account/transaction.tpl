@@ -16,6 +16,7 @@
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
       <p><?php echo $text_total; ?> <b><?php echo $total; ?></b>.</p>
+        <p><?php echo $text_credit; ?> <b><?php echo $credit; ?></b>.</p>
       <div class="table-responsive">
         <table class="table table-bordered table-hover">
           <thead>

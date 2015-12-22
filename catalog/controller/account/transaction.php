@@ -37,6 +37,7 @@ class ControllerAccountTransaction extends Controller {
 		$data['column_amount'] = sprintf($this->language->get('column_amount'), $this->config->get('config_currency'));
 
 		$data['text_total'] = $this->language->get('text_total');
+        $data['text_credit'] = $this->language->get('text_credit');
 		$data['text_empty'] = $this->language->get('text_empty');
 
 		$data['button_continue'] = $this->language->get('button_continue');
@@ -80,6 +81,7 @@ class ControllerAccountTransaction extends Controller {
 		$data['results'] = sprintf($this->language->get('text_pagination'), ($transaction_total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($transaction_total - 10)) ? $transaction_total : ((($page - 1) * 10) + 10), $transaction_total, ceil($transaction_total / 10));
 
 		$data['total'] = $this->currency->format($this->customer->getBalance());
+        $data['credit'] = $this->currency->format($this->customer->getCredit());
 
 		$data['continue'] = $this->url->link('account/account', '', 'SSL');
 

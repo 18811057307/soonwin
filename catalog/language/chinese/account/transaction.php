@@ -11,4 +11,5 @@ $_['column_amount']      = '合计 (%s)';
 $_['text_account']       = '账户';
 $_['text_transaction']   = '资金余额';
 $_['text_total']         = '我的资金余额为：';
+$_['text_credit']         = '授信额度：';
 $_['text_empty']         = '您还没有任何交易记录！';

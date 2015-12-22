@@ -9,6 +9,8 @@ class Customer {
 	private $newsletter;
 	private $customer_group_id;
 	private $address_id;
+    private $credit;
+    private $overCreditStatusId;
 
 	public function __construct($registry) {
 		$this->config = $registry->get('config');
@@ -29,6 +31,8 @@ class Customer {
 				$this->newsletter = $customer_query->row['newsletter'];
 				$this->customer_group_id = $customer_query->row['customer_group_id'];
 				$this->address_id = $customer_query->row['address_id'];
+                $this->credit = $customer_query->row['credit'];
+                $this->overCreditStatusId = $customer_query->row['over_credit_status_id'];
 
 				$this->db->query("UPDATE " . DB_PREFIX . "customer SET cart = '" . $this->db->escape(isset($this->session->data['cart']) ? serialize($this->session->data['cart']) : '') . "', wishlist = '" . $this->db->escape(isset($this->session->data['wishlist']) ? serialize($this->session->data['wishlist']) : '') . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -88,6 +92,8 @@ class Customer {
 			$this->newsletter = $customer_query->row['newsletter'];
 			$this->customer_group_id = $customer_query->row['customer_group_id'];
 			$this->address_id = $customer_query->row['address_id'];
+            $this->credit = $customer_query->row['credit'];
+            $this->overCreditStatusId = $customer_query->row['over_credit_status_id'];
 
 			$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -148,6 +154,10 @@ class Customer {
 	public function getGroupId() {
 		return $this->customer_group_id;
 	}
+
+    public function getCredit() {
+        return $this->credit;
+    }
 
 	public function getAddressId() {
 		return $this->address_id;
